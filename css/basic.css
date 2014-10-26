@@ -1,0 +1,112 @@
+#back_body {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0%;
+	top: 0%;
+	background: #1f253d;
+}
+.button1 {
+	position: absolute;
+	height: 10%;
+	width: 80%;
+	top: 30%;
+	left: 10%;
+}
+.button2 {
+	position: absolute;
+	height: 10%;
+	width: 80%;
+	top:50%;
+	left: 10%;
+}
+.button3 {
+	position: absolute;
+	height: 10%;
+	width: 80%;
+	top: 70%;
+	left: 10%;
+}
+.button4 {
+	position: absolute;
+	height: 10%;
+	width: 80%;
+	top: 90%;
+	left: 10%;
+}
+.toplist{
+	position: absolute;
+	height: 18%;
+	width: 80%;
+	top: 3%;
+	left: 10%;
+}
+.toplistpic{
+	height: 40%;
+	width: 10%;
+	
+}
+
+#sliderFrame {
+	position: absolute;
+	left: 15%;
+	top: 18%;
+}
+#rightbar {
+	position: absolute;
+	height: 70%;
+	width: 25%;
+	top: 15%;
+	left: 67%;
+	border-left-width: thin;
+	border-left-style: groove;
+	border-left-color: #666;	
+}
+#fblink{
+	position: fixed;
+	top: 45%;
+	left: 10.2%;
+	height: 10%;
+	width: 5%;
+	background-color: #3b5998;
+	border-radius: 30%;
+	vertical-align: middle;
+}
+#glink{
+	position: fixed;
+	top: 55%;
+	left: 5%;
+	height: 10%;
+	width: 5%;
+	background-color: #F90000;
+	border-radius: 30%;
+	vertical-align: middle;
+}
+#tlink{
+	position: fixed;
+	top: 65%;
+	left: 10.2%;
+	height: 10%;
+	width: 5%;
+	background-color: #00D2D2;
+	border-radius: 30%;
+	vertical-align: middle;
+}
+#ftext{
+	font-family: Arial, Helvetica, sans-serif;
+	size: 500%;	
+}
+#gtext{
+	font-family: "Times New Roman", Times, serif;
+	size: 500%;	
+}
+#ttext{
+	font-family:  Arial, Helvetica, sans-serif;
+	size: 500%;	
+}
+.leftbar{
+	height: 75%;
+	width: 10.2%;
+	border-right: groove;
+	border-bottom-right-radius: 10px; 
+}
