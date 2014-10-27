@@ -112,7 +112,7 @@ This page shows all the problems solved by a user
     <div class="back_body" id="back_body">
       <div class="upper_body" id="upper_body">
         <div class="logo" id="logo">
-          <a href="">
+          <a href="#">
             <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
               CF-Tools
           </font>
