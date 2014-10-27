@@ -127,7 +127,7 @@ This page shows all the problems solved by a user
   
   
   <div id="add_to_list">
-    <form action="new.php" method="GET" enctype="multipart/form-data">
+    <form action="allprobs.php" method="GET" enctype="multipart/form-data">
       <label>
         <font style="font-size : 25px;">
           Codename :

@@ -133,7 +133,7 @@ and also the problems that are solved by only one user, separately
 
 
     <div id="add_to_list">
-        <form action="new1.php" method="GET" enctype="multipart/form-data">
+        <form action="cpobs.php" method="GET" enctype="multipart/form-data">
             <label>
                 <font style="font-size : 25px;">
                     Codename :
