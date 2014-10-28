@@ -1,0 +1,181 @@
+.mast{
+	position: absolute;
+	left: 390px;
+	top: 120px;
+	height: 765px;
+	width: 600px;
+	
+	border-radius: 5%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        z-index: 0;
+}
+
+#u1
+{
+	position: fixed;
+	left: 390px;
+	top: 7%;
+	height: 68px;
+	width: 600px;
+	opacity: 1;
+	background-color: yellow;
+	background-image: url("../images/listback.png");
+	z-index: 2;
+}
+
+#u2
+{
+	position: fixed;
+	left: 390px;
+	bottom: 5%;
+	height: 78px;
+	width: 600px;
+	opacity: 1;
+	background-color: yellow;
+	background-image: url("../images/listback.png");
+	z-index: 2;
+}
+
+#trans
+{
+	position: fixed;
+	border-radius: 5%;
+	left: 390px;
+	top: 16%;
+	height: 450px;
+	width: 600px;
+	opacity: 0;
+	background-color: blue;
+	z-index: 3;
+}
+
+.pic1{
+        position: absolute;
+	left: 125px;
+	top: 120px;
+	height: 200px;
+	width: 200px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic2{
+        position: absolute;
+	left: 50px;
+	top: 270px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic3{
+        position: absolute;
+	left: 170px;
+	top: 420px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic4{
+        position: absolute;
+	left: 50px;
+	top: 570px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic5{
+        position: absolute;
+	left: 170px;
+	top: 720px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic6{
+        position: absolute;
+	left: 1055px;
+	top: 125px;
+	height: 200px;
+	width: 200px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic7{
+        position: absolute;
+	left: 1150px;
+	top: 275px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic8{
+        position: absolute;
+	left: 1030px;
+	top: 425px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic9{
+        position: absolute;
+	left: 1150px;
+	top: 575px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
+
+.pic10{
+        position: absolute;
+	left: 1030px;
+	top: 725px;
+	height: 180px;
+	width: 180px;
+	background-color: #394264;
+	border-radius: 100%;
+	font-family: "Comic Sans MS", cursive;
+        color: white;
+        overflow: hidden;
+}	
