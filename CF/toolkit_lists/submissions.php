@@ -244,7 +244,7 @@ This page shows the last 15 submissions (with verdict) for a user
                   $index=$temp['problem']['index'];
                   $qname=$temp['problem']['name'];
                   $verdict=$temp['verdict'];
-                  
+                  $id=$temp['id'];
                   if($verdict!="OK")
                       $ch1="red";
                   else
@@ -263,7 +263,12 @@ This page shows the last 15 submissions (with verdict) for a user
                     </a>
                   </font></center></td>
                 
-                <td><center><font style="color : <?php echo $ch1 ?>;"> <b><?php echo $verdict; ?></b> </font></center></td>
+                <td><center>
+                <font style="color : <?php echo $ch1 ?>;"> 
+                <a href="<?php echo "http://codeforces.com/contest/".$contest_id."/submission/".$id ?>" target="_blank">
+                <font style="color : <?php echo $ch1 ?>;"> <b><?php echo $verdict; ?></b> </font>
+                </font>
+                </center></td>
               
                 </font>
               </tr>
