@@ -96,14 +96,14 @@ This page shows all the problems solved by a user
       #show_list
       {
         position: absolute;
-        width: 60%;
+        width: 50%;
         left: 600px;
         top: 90px;
         
       }
       .table
       {
-        width: 60%;
+        width: 100%;
       }
     </style>
   </head>
@@ -133,7 +133,7 @@ This page shows all the problems solved by a user
           Codename :
         </font>
       </label>
-      <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForcer Username" />
+      <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForces Username" />
       <button type="submit" id="add_user" class="btn btn-lg btn-success" width="80px">
         Submissions
       </button>
@@ -214,17 +214,20 @@ This page shows all the problems solved by a user
           </th>
           <th>
             <center>
-              Index
+              Index<br>
+              Contest Link
             </center>
           </th>
           <th>
             <center>
-              Problem Name
+              Problem Name<br>
+              Problem Link
             </center>
           </th>
           <th>
             <center>
-              Verdict
+              Verdict<br>
+              Solution Link
             </center>
           </th>
         </tr>
@@ -260,13 +263,17 @@ This page shows all the problems solved by a user
               $index      = $temp['problem']['index'];
               $qname      = $temp['problem']['name'];
               $verdict    = $temp['verdict'];
+              $id         = $temp['id'];
               if ($verdict == "OK") {
-                  $arr[$contest_id . $index] = $qname;
+                  $arr[$contest_id.$index][0] = $qname;
+                  $arr[$contest_id.$index][1] = $contest_id;
+                  $arr[$contest_id.$index][2] = $index;
+                  $arr[$contest_id.$index][3] = $id;
               }
               
           }
           $i = 0;
-          asort($arr);
+          krsort($arr);
           foreach ($arr as $x => $x_value) {
           ?>
           
@@ -281,22 +288,22 @@ This page shows all the problems solved by a user
                     <td>
                       <center>
                         <font style="color : <?php echo $c1; ?> ;">
-  
+                          <a href="<?php echo "http://codeforces.com/contest/".$x_value[1] ?>" target="_blank">
                           <?php
                                       echo $x;
                         ?>
-  
+                          </a>
                         </font>
                           </center>
                     </td>
                     
                     <td>
                       <center>
-                        <font style="color : <?php echo $c1; ?> ;">
+                        <font style="color : blue ;">
   
-                              <a href="<?php echo "http://codeforces.com/problemset/problem/" . $contest_id . "/" . $index; ?>" target="_blank">
+                              <a href="<?php echo "http://codeforces.com/problemset/problem/" . $x_value[1] . "/" . $x_value[2]; ?>" target="_blank">
                                           <?php
-                                                      echo $x_value;
+                                                      echo $x_value[0];
                                         ?>
                               
                               </a>
@@ -309,7 +316,9 @@ This page shows all the problems solved by a user
                         <font style="color : <?php echo $ch1; ?>;">
   
                         <b>
+                          <a href="<?php echo "http://codeforces.com/contest/".$x_value[1]."/submission/".$x_value[3] ?>" target="_blank">
                           <?php echo "OK"; ?>
+                          </a>
                         </b>
   
                     </font>
@@ -335,7 +344,7 @@ This page shows all the problems solved by a user
   
   <?php
           include "../../include/lowerbodymaindir.php";
-?>
+  ?>
   
   
   </div>

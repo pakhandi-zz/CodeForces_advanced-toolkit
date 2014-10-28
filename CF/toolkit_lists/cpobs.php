@@ -91,6 +91,7 @@ and also the problems that are solved by only one user, separately
     position: absolute;
     left: 350px;
     height: 40px;
+    top: 50px;
 }
 #show_list
 {
@@ -109,6 +110,7 @@ and also the problems that are solved by only one user, separately
   position: absolute;
   top: 450px;
   left: 80px;
+  font-size: 20px;
   
 }
     </style>
@@ -141,7 +143,7 @@ and also the problems that are solved by only one user, separately
             </label>
             <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForces Username" />
             <label>
-                <font style="font-size : 25px;">
+                <font style="font-size : 25px; top: 50px;">
                     Codename :
                 </font>
             </label>
@@ -601,11 +603,11 @@ and also the problems that are solved by only one user, separately
     ?>
 
     <div id="sol">
-        <?php echo "Common : ".$common ?><br>
-        <?php echo $_GET['user']." : ".$sc1 ?><br>
-        <?php echo $_GET['user2']." : ".$sc2 ?><br>
-        <?php echo $_GET['user']." only : ".$c1only ?><br>
-        <?php echo $_GET['user2']." only : ".$c2only ?><br>
+        <?php echo "Common : <b>".$common."</b>" ?><br>
+        <?php echo $_GET['user']." : <b>".$sc1."</b>" ?><br>
+        <?php echo $_GET['user2']." : <b>".$sc2."</b>" ?><br>
+        <?php echo $_GET['user']." only : <b>".$c1only."</b>" ?><br>
+        <?php echo $_GET['user2']." only : <b>".$c2only."</b>" ?><br>
     </div>
 
 
