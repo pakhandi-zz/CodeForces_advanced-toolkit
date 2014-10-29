@@ -183,7 +183,7 @@ This page shows all the problems solved by a user
 ?>
       
       <a href="<?php echo "http://codeforces.com/profile/" . $coder1; ?>" target="_blank">
-  <font style="font-size : 20px; color : <?php echo $c1; ?>; text-decoration : none;">
+          <font style="font-size : 20px; color : <?php echo $c1; ?>; text-decoration : none;">
   <b>
     <?php
           
