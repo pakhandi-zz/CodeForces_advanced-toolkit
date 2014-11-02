@@ -114,6 +114,7 @@ else{
 {
     width: 100%;
 }
+
     </style>
 </head>
 
@@ -127,6 +128,8 @@ else{
           </font>
         </a>
     </div>
+
+    <?php include "../../include/upper_body_buttons.php"; ?>
 
   </div>
 

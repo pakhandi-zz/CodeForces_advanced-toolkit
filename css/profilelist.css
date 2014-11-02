@@ -37,7 +37,7 @@ background-image: linear-gradient(to bottom, #EEEDF2 0%, #9E9FA3 8%, #DADADE 100
 
 #upper_body {
 	position: absolute;
-	height: 10%;
+	height: 50px;
 	width: 100%;
 	left: 0%;
 	top: 0%;
@@ -270,4 +270,31 @@ tr:hover{
   {
   	width: 1348px !important;
   }
+}
+
+.b_new_btns
+{
+    padding: 5px;
+    height: 40px;
+    margin: 5px;
+    color: green;
+    background-color: transparent;
+    position: absolute;
+    font-size: 15px;
+}
+#b1
+{
+    left: 650px;
+}
+#b2
+{
+    left: 750px;
+}
+#b3
+{
+    left: 900px;
+}
+#b4
+{
+    left: 1060px;
 }
