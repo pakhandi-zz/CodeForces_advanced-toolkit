@@ -8,7 +8,7 @@ This page shows all the problems solved by a user
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
-      CF-Tools
+      <?php include "../../include/title_tab.php"; ?>
     </title>
     <link rel="stylesheet" href="../../css/style.css" />
     <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -112,12 +112,14 @@ This page shows all the problems solved by a user
     <div class="back_body" id="back_body">
       <div class="upper_body" id="upper_body">
         <div class="logo" id="logo">
-          <a href="#">
+          <a href="index.php">
             <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
-              CF-Tools
-          </font>
+              <?php include "../../include/logo.php"; ?>
+            </font>
       </a>
     </div>
+    
+    <?php include "../../include/upper_body_buttons.php"; ?>
     
   </div>
   
@@ -183,7 +185,7 @@ This page shows all the problems solved by a user
 ?>
       
       <a href="<?php echo "http://codeforces.com/profile/" . $coder1; ?>" target="_blank">
-          <font style="font-size : 20px; color : <?php echo $c1; ?>; text-decoration : none;">
+  <font style="font-size : 20px; color : <?php echo $c1; ?>; text-decoration : none;">
   <b>
     <?php
           

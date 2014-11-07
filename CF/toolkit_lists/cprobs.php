@@ -9,7 +9,9 @@ and also the problems that are solved by only one user, separately
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CF-Tools</title>
+<title>
+        <?php include "../../include/title_tab.php"; ?>
+</title>
 <link rel="stylesheet" href="../../css/style.css" />
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
@@ -120,14 +122,15 @@ and also the problems that are solved by only one user, separately
 <div class="back_body" id="back_body">
   <div class="upper_body" id="upper_body">  
     <div class="logo" id="logo">
-        <a href="">
+        <a href="index.php">
           <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
-              CF-Tools
-          </font>
-        </a>
+              <?php include "../../include/logo.php"; ?>
+            </font>
+      </a>
     </div>
-
-  </div>
+    
+    <?php include "../../include/upper_body_buttons.php"; ?>
+    </div>
 
 
 <!--here is the code of tool kit-->
@@ -618,3 +621,4 @@ and also the problems that are solved by only one user, separately
 </div>
 </body>
 </html>
+

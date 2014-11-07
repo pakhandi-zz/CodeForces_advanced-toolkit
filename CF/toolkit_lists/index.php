@@ -15,7 +15,7 @@ else{
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CF-Tools</title>
+<title><?php include "../../include/title_tab.php"; ?></title>
 <link rel="stylesheet" href="../../css/style.css" />
 <link rel="stylesheet" href="../../css/main_style.css" />
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -114,7 +114,6 @@ else{
 {
     width: 100%;
 }
-
     </style>
 </head>
 
@@ -124,7 +123,7 @@ else{
     <div class="logo" id="logo">
         <a href="">
           <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
-              CF-Tools (Beta Version)
+              <?php include "../../include/logo.php"; ?>
           </font>
         </a>
     </div>
@@ -230,10 +229,9 @@ else{
         </thead>
         <tbody>
         <?php 
-            $conn = mysqli_connect("XXXX","XXXXX","XXXX","XXX");
+            include "../../include/pass.php";
+            $conn = $passcode;
             $result3 = mysqli_query($conn,"SELECT * FROM flist WHERE user='$ufake'");
-            //$row3=mysqli_fetch_array($result3);
-            //$count_friends=$row3['count_friends'];
             $i=0;
             while($row3=mysqli_fetch_array($result3))
             { 
@@ -320,10 +318,6 @@ else{
     </div>
 
 <?php } ?>
-
-
-
-
 
   <?php include "../../include/lowerbodymaindir.php"; ?>
   
