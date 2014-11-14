@@ -14,7 +14,7 @@ and also the problems that are solved by only one user, separately
 </title>
 <link rel="stylesheet" href="../../css/style.css" />
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+<link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
 <style>
 #back_body
@@ -621,4 +621,3 @@ and also the problems that are solved by only one user, separately
 </div>
 </body>
 </html>
-

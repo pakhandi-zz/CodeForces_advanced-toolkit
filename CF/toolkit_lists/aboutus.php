@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CF-Tools</title>
+<title><?php include "../../include/title_tab.php"; ?> | About Us</title>
 <style type="text/css">
 
 </style>
 <link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
+<link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
 <link href="mast.css" rel="stylesheet" type="text/css" media="screen"/>
 <style>
 
@@ -67,7 +68,7 @@ body
     <div class="logo" id="logo">
         <a href="index.php">
           <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
-              CF-List
+              <?php include "../../include/logo.php"; ?>
           </font>
         </a>
     </div>
@@ -102,12 +103,9 @@ body
       
     
   </div>
-  
-  
   <?php include "../../include/lowerbodymaindir.php"; ?>
 
   
 </div>
 </body>
 </html>
-		

@@ -12,7 +12,7 @@ This page shows all the problems solved by a user
     </title>
     <link rel="stylesheet" href="../../css/style.css" />
     <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
     <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
     <style>
       
@@ -112,7 +112,7 @@ This page shows all the problems solved by a user
     <div class="back_body" id="back_body">
       <div class="upper_body" id="upper_body">
         <div class="logo" id="logo">
-          <a href="index.php">
+          <a href="index">
             <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
               <?php include "../../include/logo.php"; ?>
             </font>
@@ -338,11 +338,6 @@ This page shows all the problems solved by a user
         </tbody>
       </table>
   </div>
-  
-  
-  
-  
-  
   
   <?php
           include "../../include/lowerbodymaindir.php";

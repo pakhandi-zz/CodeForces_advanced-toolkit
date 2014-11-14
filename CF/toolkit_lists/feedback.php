@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CF-Tools</title>
+<title><?php include "../../include/title_tab.php"; ?></title>
 <style type="text/css">
 
 </style>
@@ -71,7 +71,7 @@ body
     <div class="logo" id="logo">
         <a href="index.php">
           <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
-              CF-Tools
+              <?php include "../../include/logo.php"; ?>
           </font>
         </a>
     </div>

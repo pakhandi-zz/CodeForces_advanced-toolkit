@@ -1,9 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION['session_username'])) {
-$flag_login=0;
+if (!isset($_SESSION['session_username']))
+{
+  $flag_login=0;
 }
-else{
+else
+{
   $flag_login=1;
   $ufake=$_SESSION['session_username'];
 }
@@ -318,6 +320,7 @@ else{
     </div>
 
 <?php } ?>
+
 
   <?php include "../../include/lowerbodymaindir.php"; ?>
   

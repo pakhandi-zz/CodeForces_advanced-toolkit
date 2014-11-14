@@ -8,10 +8,10 @@ This page shows the last 15 submissions (with verdict) for a user
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CF-Tools</title>
+<title><?php include "../../include/title_tab.php"; ?></title>
 <link rel="stylesheet" href="../../css/style.css" />
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+<link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
 <style>
 
@@ -112,13 +112,13 @@ This page shows the last 15 submissions (with verdict) for a user
 <div class="back_body" id="back_body">
   <div class="upper_body" id="upper_body">
     <div class="logo" id="logo">
-        <a href="">
+        <a href="index.php">
           <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
-              CF-Tools
+              <?php include "../../include/logo.php"; ?>
           </font>
         </a>
     </div>
-
+    <?php include "../../include/upper_body_buttons.php"; ?>
   </div>
 
 
@@ -281,13 +281,7 @@ This page shows the last 15 submissions (with verdict) for a user
           </table>
     </div>
 
-
-
-
-
-
   <?php include "../../include/lowerbodymaindir.php"; ?>
-  
   
 </div>
 </body>

@@ -25,8 +25,8 @@ else
 ?>
 <?php
 date_default_timezone_set('Asia/Kolkata');
-
-$con5=mysqli_connect("xxxxxxx","xxxxxx","XXxxxXX","XXxxxx");
+include "../../include/pass.php";
+$con5=$passcode;
 
 $qw = "DELETE FROM flist WHERE unique_id = '" . $_SESSION['session_username'].$cid . "'";
 mysqli_query($con5,$qw);
