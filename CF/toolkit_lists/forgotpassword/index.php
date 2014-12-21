@@ -1,7 +1,5 @@
 <?php
-/*
 
-  PHP code for password retrieval
+      PHP code to send a mail to the person who wants to retrieve his password
 
-*/
 ?>

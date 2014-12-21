@@ -18,8 +18,6 @@ else
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php include "../../include/title_tab.php"; ?></title>
-<link rel="stylesheet" href="../../css/style.css" />
-<link rel="stylesheet" href="../../css/main_style.css" />
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -80,15 +78,6 @@ else
   color: black;
 }
 
-#m3 {
-    width:1px;
-    background-color:blue;
-    position:absolute;
-    top:80px;
-    bottom:200px;
-    left: 680px;
-    height: 60%;
-}
 #add_to_list
 {
     position: absolute;
@@ -126,6 +115,7 @@ else
         <a href="">
           <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
               <?php include "../../include/logo.php"; ?>
+              <i class="icon-large icon-github"></i>
           </font>
         </a>
     </div>
@@ -134,7 +124,9 @@ else
 
   </div>
 
+  <?php include "../../include/gitoctocat.php"; ?>
 
+  
 <!--here is the code of tool kit-->
 
 <?php if($flag_login==0) { ?>
@@ -167,7 +159,7 @@ else
     </form>
   </div>
 
-  <div id="m3"></div>
+  
 
 <div id="m2" style="position:fixed;left:810px;top:100px;height:450px;width:400px;border-radius:10px;box-shadow:5px 5px 50px #0099FF;">
   
@@ -328,3 +320,14 @@ else
 </div>
 </body>
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56207835-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

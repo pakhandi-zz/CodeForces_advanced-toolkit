@@ -1,10 +1,5 @@
 <?php
 
-/*
-
-	PHP code for comparison of statistics of two coders
-
-*/
 
 $coder1=$_POST['coder1'];
 $coder2=$_POST['coder2'];
@@ -422,3 +417,14 @@ background-image: linear-gradient(to bottom, #FA0505 6%, #DDFF00 28%, #BE14C7 54
 </div>
 </body>
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56207835-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

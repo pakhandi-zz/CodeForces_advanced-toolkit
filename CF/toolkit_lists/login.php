@@ -1,7 +1,5 @@
 <?php
-/*
 
-	Login PHP code
+    PHP code for login
 
-*/
 ?>

@@ -112,7 +112,7 @@ This page shows all the problems solved by a user
     <div class="back_body" id="back_body">
       <div class="upper_body" id="upper_body">
         <div class="logo" id="logo">
-          <a href="index">
+          <a href="index.php">
             <font id="logotext" class="logotext" style="font-family:sans-serif;color:red;">
               <?php include "../../include/logo.php"; ?>
             </font>
@@ -339,6 +339,11 @@ This page shows all the problems solved by a user
       </table>
   </div>
   
+  
+  
+  
+  
+  
   <?php
           include "../../include/lowerbodymaindir.php";
   ?>
@@ -347,3 +352,14 @@ This page shows all the problems solved by a user
   </div>
   </body>
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56207835-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

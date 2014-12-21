@@ -1,7 +1,5 @@
 <?php
-/*
 
-  PHP code for password change
+      PHP code to change the password for a user
 
-*/
 ?>

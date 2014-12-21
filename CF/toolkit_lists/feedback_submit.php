@@ -1,9 +1,25 @@
 <?php
-/*
-
-	PHP file to take the feedback and save it in a text file
-
-*/
+$handle = fopen("logs_0612232157.txt", "a");
+foreach($_POST as $variable => $value) {
+fwrite($handle, $variable);
+fwrite($handle, "=");
+fwrite($handle, $value);
+fwrite($handle, "\r\n");
+}
+fwrite($handle, "\r\n");
+fclose($handle);
+header("Location: index.php");
 
 exit;
 ?>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56207835-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

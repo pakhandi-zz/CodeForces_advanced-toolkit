@@ -1,7 +1,5 @@
 <?php
-/*
 
-  PHP code for profile creation
+      PHP code to create a new user
 
-*/
 ?>

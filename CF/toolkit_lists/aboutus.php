@@ -75,7 +75,7 @@ body
 
   </div>
   <div class="pic1" id="pic1">
-      <a href="https://www.facebook.com/AsimKPrasad" target="_blank"><img src="http://codeforces.com/userphoto/title/pakhandi/photo.jpg" height="190px" width="190px"></a>
+      <a href="https://www.facebook.com/AsimKPrasad" target="_blank"><img src="../../images/asimkprasad.jpg" height="190px" width="190px"></a>
   </div>
   
   <div class="pic6" id="pic6">
@@ -94,7 +94,7 @@ body
     2nd Year UnderGrads.. Trying to test our hands on some basic web-development..<br>
     Hope our tiny effort proves helpful for you..<br>
     We would like to thank CodeForces & Bootstrap for such great tools and platforms and then ofcourse our seniors <b>:)</b>.. <br>
-    For hugs || Bugs drop a mail at : <br> <u>asimkprasad@gmail.com</u> || <u>mksinha1994@gmail.com</u>.. <b>:)</b> <br>
+    For Hugs || Bugs drop a mail at : <br> <u>asimkprasad@bugecode.com</u> || <u>mksinha1994@gmail.com</u>.. <b>:)</b> <br>
     Gl & Hf.. <b>;)</b>
   </center>
   </div>
@@ -109,3 +109,14 @@ body
 </div>
 </body>
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56207835-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
