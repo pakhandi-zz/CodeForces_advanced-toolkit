@@ -14,6 +14,18 @@ This page shows all the problems solved by a user
     <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
     <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <link rel="stylesheet" type="text/css" href="jquery.autocomplete.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.autocomplete.js"></script>
+    <script>
+     $(document).ready(function(){
+      $("#input_add_to_list").autocomplete("autocomplete.php", {
+            selectFirst: true
+      });
+     });
+    </script>
+
     <style>
       
       #back_body
@@ -132,7 +144,7 @@ This page shows all the problems solved by a user
     <form action="allprobs.php" method="GET" enctype="multipart/form-data">
       <label>
         <font style="font-size : 25px;">
-          Codename :
+          Handle :
         </font>
       </label>
       <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForces Username" />
@@ -142,6 +154,12 @@ This page shows all the problems solved by a user
     </form>
     <br>
     <br>
+    <?php
+            if(!isset($_GET['user']) )
+            {
+              die();
+            }
+    ?>
     <?php
           $utemp  = $_GET['user'];
           $coder1 = $utemp;
@@ -255,6 +273,15 @@ This page shows all the problems solved by a user
               echo "Enter a Valid Username";
               die();
           }
+          else
+          {
+            include "../../include/pass.php";
+            $conn = $passcode;
+
+            $qw = "INSERT INTO handles VALUES ('$coder1')";
+            mysqli_query($conn,$qw);
+            mysqli_close($conn);
+          }
           
           $response = $response['result'];
           $arr      = array();
@@ -286,11 +313,22 @@ This page shows all the problems solved by a user
                   <?php echo $i + 1; ?>
                 </center>
               </td>
-                    
+                    <?php
+                            if($x_value[1]>10000){
+                                $new_link="http://codeforces.com/gym/".$x_value[1];
+                                $new_link2="http://codeforces.com/gym/".$x_value[1]."/attachments";
+                                $new_link3="http://codeforces.com/gym/".$x_value[1]."/submission/".$x_value[3];
+                              }
+                            else{
+                                $new_link="http://codeforces.com/contest/".$x_value[1];
+                                $new_link2="http://codeforces.com/problemset/problem/" . $x_value[1] . "/" . $x_value[2];
+                                $new_link3="http://codeforces.com/contest/".$x_value[1]."/submission/".$x_value[3];
+                              }
+                        ?>
                     <td>
                       <center>
                         <font style="color : <?php echo $c1; ?> ;">
-                          <a href="<?php echo "http://codeforces.com/contest/".$x_value[1] ?>" target="_blank">
+                          <a href="<?php echo $new_link ?>" target="_blank">
                           <?php
                                       echo $x;
                         ?>
@@ -303,7 +341,7 @@ This page shows all the problems solved by a user
                       <center>
                         <font style="color : blue ;">
   
-                              <a href="<?php echo "http://codeforces.com/problemset/problem/" . $x_value[1] . "/" . $x_value[2]; ?>" target="_blank">
+                              <a href="<?php echo $new_link2; ?>" target="_blank">
                                           <?php
                                                       echo $x_value[0];
                                         ?>
@@ -318,7 +356,7 @@ This page shows all the problems solved by a user
                         <font style="color : <?php echo $ch1; ?>;">
   
                         <b>
-                          <a href="<?php echo "http://codeforces.com/contest/".$x_value[1]."/submission/".$x_value[3] ?>" target="_blank">
+                          <a href="<?php echo $new_link3; ?>" target="_blank">
                           <?php echo "OK"; ?>
                           </a>
                         </b>

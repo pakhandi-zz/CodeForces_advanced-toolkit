@@ -16,6 +16,25 @@ and also the problems that are solved by only one user, separately
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
+
+<link rel="stylesheet" type="text/css" href="jquery.autocomplete.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.autocomplete.js"></script>
+    <script>
+     $(document).ready(function(){
+      $("#input_add_to_list").autocomplete("autocomplete.php", {
+            selectFirst: true
+      });
+     });
+    </script>
+    <script>
+     $(document).ready(function(){
+      $("#input_add_to_list2").autocomplete("autocomplete.php", {
+            selectFirst: true
+      });
+     });
+    </script>
+
 <style>
 #back_body
 {
@@ -141,13 +160,13 @@ and also the problems that are solved by only one user, separately
         <form action="cprobs.php" method="GET" enctype="multipart/form-data">
             <label>
                 <font style="font-size : 25px;">
-                    Codename :
+                    Handles :
                 </font>
             </label>
             <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForces Username" />
             <label>
                 <font style="font-size : 25px; top: 50px;">
-                    Codename :
+                    <!-- Handle -->
                 </font>
             </label>
             <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;top:50px" id="input_add_to_list2" name="user2" placeholder="CodeForces Username" />
@@ -156,6 +175,18 @@ and also the problems that are solved by only one user, separately
         </form>
         <br>
         <br>
+        <?php
+  
+            if(!isset($_GET['user']) )
+            {
+              die();
+            }
+            if(!isset($_GET['user2']) )
+            {
+              die();
+            }
+
+        ?>
         <?php
           $utemp=$_GET['user'];
           $coder1=$utemp;
@@ -315,6 +346,15 @@ and also the problems that are solved by only one user, separately
                     echo "Enter a Valid Username";
                     die();
                   }
+                  else
+                  {
+                    include "../../include/pass.php";
+                    $conn = $passcode;
+
+                    $qw = "INSERT INTO handles VALUES ('$coder1')";
+                    mysqli_query($conn,$qw);
+                    mysqli_close($conn);
+                  }
 
                   $response=$response['result'];
             $arr=array();
@@ -358,6 +398,15 @@ and also the problems that are solved by only one user, separately
                   {
                     echo "Enter a Valid Username";
                     die();
+                  }
+                  else
+                  {
+                    include "../../include/pass.php";
+                    $conn = $passcode;
+
+                    $qw = "INSERT INTO handles VALUES ('$coder2')";
+                    mysqli_query($conn,$qw);
+                    mysqli_close($conn);
                   }
 
                   $response=$response['result'];
@@ -414,9 +463,23 @@ and also the problems that are solved by only one user, separately
                     <td><center><?php echo $i+1; ?></center></td>
                 
                         <td><center><font style="color : black"> <?php echo $x; ?> </font></center></td>
-                
+                <?php
+                      if($x_value[0]>10000)
+                      {
+                          $new_link="http://codeforces.com/gym/".$x_value[0]."/attachments";
+                          $new_link2="http://codeforces.com/gym/".$x_value[0]."/submission/".$x_value[5];
+                          $new_link3="http://codeforces.com/gym/".$x_value[0]."/submission/".$x_value[6];
+                      }
+                      else
+                      {
+                          $new_link="http://codeforces.com/problemset/problem/".$x_value[0]."/".$x_value[1];
+                          $new_link2="http://codeforces.com/contest/".$x_value[0]."/submission/".$x_value[5];
+                          $new_link3="http://codeforces.com/contest/".$x_value[0]."/submission/".$x_value[6];
+                      }
+
+                ?>
                            <td><center><font style="color : blue"> 
-                              <a href="<?php echo "http://codeforces.com/problemset/problem/".$x_value[0]."/".$x_value[1] ?>" target="_blank">
+                              <a href="<?php echo $new_link;  ?>" target="_blank">
                                 <?php echo $x_value[2] ?> 
                               </a>
                           </font></center></td>
@@ -435,7 +498,7 @@ and also the problems that are solved by only one user, separately
                      ?>
                       
                           <td><center>
-                              <a href="<?php echo "http://codeforces.com/contest/".$x_value[0]."/submission/".$x_value[5] ?>" target="_blank">
+                              <a href="<?php echo $new_link2; ?>" target="_blank">
                             <font style="color : <?php echo $ch1 ?>;"> <img src="images/ret.png" height="20px" width="20px"> </font></a></center></td>
                       
                      <?php } 
@@ -448,7 +511,7 @@ and also the problems that are solved by only one user, separately
 
 
                           <td><center>
-                            <a href="<?php echo "http://codeforces.com/contest/".$x_value[0]."/submission/".$x_value[6] ?>" target="_blank">
+                            <a href="<?php echo $new_link3; ?>" target="_blank">
                               <font style="color : <?php echo $ch1 ?>;"> <img src="images/ret.png" height="20px" width="20px">
                               </font></a></center></td>
                         <?php } ?>

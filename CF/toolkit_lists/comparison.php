@@ -4,6 +4,17 @@
 $coder1=$_POST['coder1'];
 $coder2=$_POST['coder2'];
 
+			/*if(!isset($_POST['coder1']) || empty($_GET['coder1']))
+            {
+              	header('Location: inex.php');
+				die();
+            }
+            if(!isset($_POST['coder2']) || empty($_GET['coder2']))
+            {
+              	header('Location: inex.php');
+				die();
+            }*/
+
 
 /*=============================*/
 //making http connection
@@ -101,6 +112,13 @@ $con2=$passcode;
 $t=time();
 $un=$coder1.$coder2.$t;
 mysqli_query($con2,"INSERT INTO Recent_CF (user1, user2, timest, uniquekey) VALUES ('$coder1', '$coder2', '$t', '$un')");
+
+$qw = "INSERT INTO handles VALUES ('$coder1')";
+mysqli_query($con2, $qw);
+
+$qw = "INSERT INTO handles VALUES ('$coder2')";
+mysqli_query($con2, $qw);
+
 mysqli_close($con2);
 
 if($rating2<1200)

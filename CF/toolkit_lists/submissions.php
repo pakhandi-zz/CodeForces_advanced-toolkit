@@ -13,6 +13,18 @@ This page shows the last 15 submissions (with verdict) for a user
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel='shortcut icon' type='image/x-icon' href='../../images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
+
+<link rel="stylesheet" type="text/css" href="jquery.autocomplete.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.autocomplete.js"></script>
+    <script>
+     $(document).ready(function(){
+      $("#input_add_to_list").autocomplete("autocomplete.php", {
+            selectFirst: true
+      });
+     });
+    </script>
+
 <style>
 
 #back_body
@@ -130,14 +142,23 @@ This page shows the last 15 submissions (with verdict) for a user
         <form action="submissions.php" method="GET" enctype="multipart/form-data">
             <label>
                 <font style="font-size : 25px;">
-                    Codename :
+                    Handle :
                 </font>
             </label>
-            <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForcer Username" />
+            <input type="text" style="color:blue;border-radius:8px;position:absolute;left:27%;width:200px;height:40px;" id="input_add_to_list" name="user" placeholder="CodeForces Username" />
             <button type="submit" id="add_user" class="btn btn-lg btn-success" width="80px">Submissions</button>
         </form>
         <br>
         <br>
+        <?php
+  
+            if(!isset($_GET['user']))
+            {
+              die();
+            }
+
+
+        ?>
         <?php
           $utemp=$_GET['user'];
           $coder1=$utemp;
@@ -233,7 +254,15 @@ This page shows the last 15 submissions (with verdict) for a user
                     echo "Enter a Valid Username";
                     die();
                   }
+                  else
+                  {
+                    include "../../include/pass.php";
+                    $conn = $passcode;
 
+                    $qw = "INSERT INTO handles VALUES ('$coder1')";
+                    mysqli_query($conn,$qw);
+                    mysqli_close($conn);
+                  }
                   $response=$response['result'];
             
             for($i=0; $i<15; $i++)
@@ -251,6 +280,20 @@ This page shows the last 15 submissions (with verdict) for a user
                       $ch1="green";
                   
                   ?>
+
+                  <?php
+                      if($contest_id>10000)
+                      {
+                          $new_link="http://codeforces.com/gym/".$contest_id."/attachments";
+                        $new_link2="http://codeforces.com/gym/".$contest_id."/submission/".$id;
+                      }
+                      else
+                      {
+                        $new_link="http://codeforces.com/problemset/problem/".$contest_id."/".$index;
+                        $new_link2="http://codeforces.com/contest/".$contest_id."/submission/".$id;
+                      }
+
+                  ?>
               <tr>
                 <center>
                 <td><center><?php echo $i+1; ?></center></td>
@@ -258,14 +301,14 @@ This page shows the last 15 submissions (with verdict) for a user
                 <td><center><font style="color : <?php echo $c1 ?>;"> <?php echo $index; ?> </font></center></td>
                 
                 <td><center><font style="color : <?php echo $c1 ?>;"> 
-                  <a href="<?php echo "http://codeforces.com/problemset/problem/".$contest_id."/".$index ?>" target="_blank">
+                  <a href="<?php echo $new_link; ?>" target="_blank">
                     <?php echo $qname ?> 
                     </a>
                   </font></center></td>
                 
                 <td><center>
                 <font style="color : <?php echo $ch1 ?>;"> 
-                <a href="<?php echo "http://codeforces.com/contest/".$contest_id."/submission/".$id ?>" target="_blank">
+                <a href="<?php echo $new_link2; ?>" target="_blank">
                 <font style="color : <?php echo $ch1 ?>;"> <b><?php echo $verdict; ?></b> </font>
                 </font>
                 </center></td>
