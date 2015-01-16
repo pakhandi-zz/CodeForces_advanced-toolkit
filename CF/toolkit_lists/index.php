@@ -10,9 +10,6 @@ else
   $ufake=$_SESSION['session_username'];
 }
 ?>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,6 +18,16 @@ else
 <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 <link href="../../css/profilelist.css" rel="stylesheet" type="text/css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="jquery.autocomplete.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.autocomplete.js"></script>
+    <script>
+     $(document).ready(function(){
+      $("#input_add_to_list").autocomplete("autocomplete.php", {
+            selectFirst: true
+      });
+     });
+    </script>
 <style>
 
 #back_body
@@ -47,7 +54,7 @@ else
   right: 0px;
   width: 100px;
   padding-left: 15px;
-  padding-top: 60px;
+  padding-top: 30px;
   padding-right: 15px;
   font-size: 18px;
   color : blue;
@@ -101,6 +108,7 @@ else
     top: 100px;
 
 }
+
 .table
 {
     width: 100%;
@@ -109,7 +117,7 @@ else
 </head>
 
 <body style="background-color:white !important;">
-<div class="back_body" id="back_body">
+ <div class="back_body" id="back_body">
   <div class="upper_body" id="upper_body">
     <div class="logo" id="logo">
         <a href="">
@@ -129,18 +137,19 @@ else
   
 <!--here is the code of tool kit-->
 
-<?php if($flag_login==0) { ?>
+
+ <?php if($flag_login==0) { ?>
 <div id="m1">
   <form action="login.php" method="POST" enctype="multipart/form-data">
     <div id="m4" style="position:fixed;">
   
       </div>
     <fieldset style="color:red;border-color:white;height:140px;box-shadow: 5px 5px 50px #0099FF;border-radius:50px;">
-        <legend>&nbsp;&nbsp;&nbsp;&nbsp;Code Names</legend>
+        <legend>&nbsp;&nbsp;&nbsp;&nbsp;Log In <span style="font-size:14px;">(This login is different from your codeforces login : <a href="http://tools.bugecode.com/CF/toolkit_lists/submit/"> register here</a>) </span></legend>
             <ol>
               <li>
-                  <label>Username :</label>
-                  <input type="text" style="color:blue;border-radius:8px;position:absolute;left:30%;width:200px;height:20px; " id="username" name="ufake" placeholder="username" />
+                  <label>Email-Id :</label>
+                  <input type="text" style="color:blue;border-radius:8px;position:absolute;left:30%;width:200px;height:20px; " id="username" name="ufake" placeholder="email-id" />
               </li>
               <br>
               <li>
@@ -165,11 +174,13 @@ else
   
   This is a simple Tool-Kit for CodeForces where you can create a list of CodeForces usernames and keep an eye on 
   the ratings and recent submissions of your friends <b>:)</b>
-  <br>
-  <br>
-  Simple & Clean.. <br>
+  <br><br>
+  Sign-up is not required to use the tools (in the header).. It just allows you to make a list of your friends on CF..
+  <br><br>
+  <a href="http://bugecode.com/CF_Toolkit_Blog.php" target="_blank"><u>Read More</u></a>
+  <br><br>
+  Simple & Clean.. 
   Happy Competing
-  <br>
   <br>
   <br>
   &nbsp;&nbsp;&nbsp;
@@ -187,9 +198,10 @@ else
 
   <?php } ?>
 
-<?php if($flag_login==1) { ?>
+ <?php if($flag_login==1) { $arr=array(); ?>
 
-    <div id="add_to_list">
+
+      <div id="add_to_list">
         <form action="add_to_list.php" method="POST" enctype="multipart/form-data">
             <label>
                 <font style="font-size : 25px;">
@@ -233,6 +245,7 @@ else
                   if($row3['showit']==0)
                       continue;
                   $coder1=$row3['friend'];
+                 
                   //making http connection
                   $url="http://codeforces.com/api/user.info?handles=".$coder1;
                   $ch = curl_init();
@@ -246,7 +259,8 @@ else
                   //values for coder1
                   if($response['status']!="OK")
                   {
-                    echo "SERVER ERROR";
+                    echo "<b>"."SERVER ERROR for : ".$coder1."</b>\n";
+                    continue;
                     die();
                   }
                   $response=$response['result'];
@@ -289,45 +303,59 @@ else
                     $ch1="#ff8c00";
                   else
                     $ch1="red";
+
+
+                        {
+                          $arr[$rating1.$handle1][0]=$handle1;
+                          $arr[$rating1.$handle1][1]=$rating1;
+                          $arr[$rating1.$handle1][2]=$maxrating1;
+                          $arr[$rating1.$handle1][3]=$c1;
+                          $arr[$rating1.$handle1][4]=$ch1;
+                          
+                        }
+                  
+                }
                   ?>
+
+               <?php   krsort($arr);  
+               $i=0;
+               foreach($arr as $x=>$x_value)
+               {
+               ?>
+
               <tr>
                 <center>
+                <b>
                   <td><center><a href="remove_user.php?index=<?php echo $row3['friend'] ?>"><img src="images/del.png" height="20px" width="20px"></a>
                                   </center> </td>
                 <td><center><?php echo $i; $i++; ?></center></td>
                 
-                <td><a href="<?php echo "http://codeforces.com/profile/".$row3['friend']; ?>" target="_blank"><center><font style="color : <?php echo $c1 ?>;"> <?php echo $row3['friend']; ?> </font></center></td></a>
-                <td><center><font style="color : <?php echo $c1 ?>;"> <?php echo $rating1 ?> </font></center></td>
-                <td><center><font style="color : <?php echo $ch1 ?>;"> <?php echo $maxrating1; ?> </font></center></td>
-                <td><a href="submissions.php?user=<?php echo $row3['friend'] ?>" target="_blank">>-></a></td>
+                <td><a href="<?php echo "http://codeforces.com/profile/".$x_value[0]; ?>" target="_blank"><center><font style="color : <?php echo $x_value[3] ?>;"> <b><?php echo $x_value[0]; ?></b> </font></center></td></a>
+                <td><center><font style="color : <?php echo $x_value[3] ?>;"> <b><?php echo $x_value[1] ?></b></font></center></td>
+                <td><center><font style="color : <?php echo $x_value[4] ?>;"> <b><?php echo $x_value[2]; ?></b> </font></center></td>
+                <td><a href="submissions.php?user=<?php echo $x_value[0] ?>" target="_blank">>-></a></td>
                 </font>
+                </b>
               </tr>
+
+              <?php  } ?>
               
             
-        <?php    }
-        ?>
+        
 
       </tbody>
           </table>
     </div>
 
-<?php } ?>
+
+    
+
+<?php } ?> 
 
 
   <?php include "../../include/lowerbodymaindir.php"; ?>
   
   
-</div>
+</div> 
 </body>
 </html>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-56207835-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
