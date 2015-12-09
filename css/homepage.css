@@ -1,0 +1,22 @@
+body {
+	background-image: url("../images/wall.jpg");
+	background-size:cover;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #ffffff;
+	font-family: "Whitney SSm A", "Whitney SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#my-navbar {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#textslide {
+	margin-top: 320px;
+	color: white;
+	text-align: center;
+	font-size: 48px;
+}
