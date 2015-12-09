@@ -32,8 +32,7 @@
 			    </div>
 		       
 		      	<div class="collapse navbar-collapse" id="navbar-collapse">
-		        	<a href="#0" class="cd-signin btn btn-warning navbar-btn navbar-right">Sign In</a>
-		        	<a href="#0" class="cd-signup btn btn-warning navbar-btn navbar-right">Sign Up</a>
+		        
 		         	<ul class="nav navbar-nav">
 				        <li><a href="compete.php">Compete</a>
 				        <li><a href='allsub.php'>All Submissions</a>
@@ -41,7 +40,7 @@
 				        <li><a href="compare.php">Compare</a>
 				        <li><a href="bugecode.com">Bug-e-Code</a>
 				        <li><a href="notice.php">Notice</a>
-					</ul>
+				</ul>
 		      	</div>
 		    </div>
 		</nav>
