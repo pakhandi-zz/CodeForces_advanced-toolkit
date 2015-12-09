@@ -2,17 +2,17 @@
 
 	<head>
 		<title>CF-Toolkit</title>
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/homepage.css" rel="stylesheet">
-		<script src="../js/html5shiv.min.js"></script>
-	    <script src="../js/respond.min.js"></script>
+		<link href="../../bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../bootstrap/css/homepage.css" rel="stylesheet">
+		<script src="../../bootstrap/js/html5shiv.min.js"></script>
+	    <script src="../../bootstrap/js/respond.min.js"></script>
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-	    <link rel="stylesheet" href="../css/reset.css">
-	    <link rel="stylesheet" href="../css/style.css">
-	    <script src="../js/modernizr.js"></script>
-	    <script type="text/javascript" src="../js/homepage.js"></script>
+	    <link rel="stylesheet" href="../../bootstrap/css/reset.css">
+	    <link rel="stylesheet" href="../../bootstrap/css/style.css">
+	    <script src="../../bootstrap/js/modernizr.js"></script>
+	    <script type="text/javascript" src="../../bootstrap/js/homepage.js"></script>
 	    <script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 
@@ -51,7 +51,7 @@
  
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	    <script src="../js/bootstrap.min.js"></script>
-	    <script src="../js/main.js"></script>
+	    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+	    <script src="../../bootstrap/js/main.js"></script>
 	</body>
 </html>
